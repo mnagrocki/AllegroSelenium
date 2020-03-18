@@ -24,9 +24,9 @@ public class Iphon11
     }
 
     @Test
-    public void  AllegroTest()
-    {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+    public void  AllegroTest() {
+        WebDriverWait wait;
+        wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("[data-role='accept-consent']")));
         driver.findElement(By.cssSelector("[data-role='accept-consent']")).click();
         WebElement searchEntry = driver.findElement(By.cssSelector("[placeholder='czego szukasz?']"));
@@ -35,10 +35,29 @@ public class Iphon11
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("czarny")));
         driver.findElement(By.linkText("czarny")).click();
         wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("article[data-analytics-view-custom-page='1']")));
-        List <WebElement> Iphone11 = driver.findElements(By.cssSelector("article[data-analytics-view-custom-page='1']"));
+        List<WebElement> Iphone11 = driver.findElements(By.cssSelector("article[data-analytics-view-custom-page='1']"));
         System.out.println(Iphone11.size());
-        for(int i=0; i<Iphone11.size();i++){
+        for (int i = 0; i < Iphone11.size(); i++) {
             System.out.println((Iphone11.get(i).getText()));
+        }
+        ;
+
+        driver.findElement(By.cssSelector("[class='_1h7wt _k70df _7qjq4 _27496_3VqWr']")).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[value='pd']")));
+        driver.findElement(By.cssSelector("[value='pd']")).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("article[data-analytics-view-custom-index0='0']")));
+        driver.findElement(By.cssSelector("[data-analytics-view-custom-index0='0']"));
+        List<WebElement> priceMAx = driver.findElements(By.xpath("  //*[@id=\"opbox-listing--base\"]/div/section[1]/section/article[1]/div/div/div[2]/div[2]/div/div/span"));
+        System.out.println(priceMAx.size());
+        for (int i = 0; i < priceMAx.size(); i++)
+        {
+            System.out.println("requested Iphone11 " + priceMAx.get(i).getText());
+
+           int priceVAT =  Integer.parseInt(priceMAx.get(i).getText());
+           System.out.println(priceVAT);
+
+
+
         }
 
 
