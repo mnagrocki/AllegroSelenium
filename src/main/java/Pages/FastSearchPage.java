@@ -3,6 +3,7 @@ package Pages;
 import Locators.FastSearchLocators;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -40,17 +41,18 @@ public class FastSearchPage
 
     }
     public void  takeColours()
-    {   wait.until(ExpectedConditions.visibilityOfElementLocated((By)fastSearchLocators.getSelectColour()));
-        fastSearchLocators.getSelectColour().click();
+    {   wait.until(ExpectedConditions.visibilityOf(fastSearchLocators.getSelectColourBlack()));
+         fastSearchLocators.getSelectColourBlack().isSelected();
+         fastSearchLocators.getSelectColourBlack().click();
     }
     public void  choseListOfPhones()
     {
-        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy((By)fastSearchLocators.getListOfPhones()));
+        wait.until(ExpectedConditions.visibilityOf(fastSearchLocators.getListOfPhones().get(1)));
         fastSearchLocators.getListOfPhones();
-        System.out.println(fastSearchLocators.getListOfPhones().size());
+        System.out.println(fastSearchLocators.getListOfPhones());
         for (int i = 0; i < fastSearchLocators.getListOfPhones().size(); i++) {
-            String aElement = fastSearchLocators.getListOfPhones().size().get(i).getText();
-            System.out.println((aElement);
+            String aElement = fastSearchLocators.getListOfPhones().get(i).getText();
+            System.out.println((aElement));
         }
 
     }
@@ -61,17 +63,18 @@ public class FastSearchPage
     }
     public void  selectHighestPrice()
     {
-        wait.until(ExpectedConditions.visibilityOfElementLocated((By)fastSearchLocators.getHighestPrice()));
-        fastSearchLocators.getHighestPrice();
+        wait.until(ExpectedConditions.visibilityOf(fastSearchLocators.getHighestPrice()));
+        fastSearchLocators.getHighestPrice().isSelected();
+        fastSearchLocators.getHighestPrice().click();
     }
     public void selectPriceMAx()
     {
-        wait.until(ExpectedConditions.visibilityOfElementLocated((By)fastSearchLocators.getPriceMAx()));
+        //wait.until(ExpectedConditions.visibilityOf(fastSearchLocators.getPriceMAx()));
         fastSearchLocators.getPriceMAx();
     }
     public void takeFirstArticle()
     {
-        wait.until(ExpectedConditions.visibilityOfElementLocated((By)fastSearchLocators.getFirsArticle()));
+        wait.until(ExpectedConditions.visibilityOf(fastSearchLocators.getFirsArticle()));
         fastSearchLocators.getFirsArticle();
     }
     public void takePriceMax()

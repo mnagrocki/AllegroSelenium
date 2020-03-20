@@ -30,14 +30,14 @@ public class FastSearchLocators
     }
 
     @FindBy(linkText = "czarny")
-    private WebElement selectColour;
+    private WebElement selectColourBlack;
 
-    public WebElement getSelectColour() {
-        return selectColour;
+    public WebElement getSelectColourBlack() {
+        return selectColourBlack;
     }
 
-    public void setSelectColour(WebElement selectColour) {
-        this.selectColour = selectColour;
+    public void setSelectColourBlack(WebElement selectColourBlack) {
+        this.selectColourBlack = selectColourBlack;
     }
 
 
@@ -52,7 +52,7 @@ public class FastSearchLocators
     public void setListOfPhones(WebElement listOfPhones) {
         this.listOfPhones = (List<WebElement>) listOfPhones;
     }
-    @FindBy(css= "[class='_1h7wt_k70df_7qjq4_27496_3VqWr']")
+    @FindBy(xpath= "/html/body/div[2]/div[4]/div/div/div/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/select")
     private WebElement topBar;
 
     public WebElement getTopBar() {
@@ -62,7 +62,8 @@ public class FastSearchLocators
     public void setTopBar(WebElement topBar) {
         this.topBar = topBar;
     }
-    @FindBy(css="[value='pd']")
+
+    @FindBy(xpath ="/html/body/div[2]/div[4]/div/div/div/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/select/option[3]")
     private WebElement highestPrice;
 
     public WebElement getHighestPrice() {
@@ -73,7 +74,7 @@ public class FastSearchLocators
         this.highestPrice = highestPrice;
     }
 
-    @FindBy(css = "[data-analytics-view-custom-index0='0']")
+    @FindBy(xpath = "/html/body/div[2]/div[4]/div/div/div/div/div/div[2]/div[1]/div[3]/div/div/div/div[2]/div[1]/div/section[1]/section/article[1]")
     private WebElement firsArticle;
 
 
