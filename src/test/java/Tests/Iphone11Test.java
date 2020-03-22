@@ -43,7 +43,7 @@ public class Iphone11Test
         fastSearchPage.takeSecondArticle();
         fastSearchPage.takePriceOFSecondArticle();
         System.out.println();
-        System.out.println("Check the prices of both articles. !!!");
+        System.out.println("Check the prices of both articles. !!! If the price of second article is larger, check the process of sorting list in browser. !  ");
 
 
     }
