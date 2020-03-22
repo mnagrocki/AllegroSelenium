@@ -86,7 +86,7 @@ public class FastSearchLocators
         this.firsArticle = firsArticle;
     }
 
-    @FindBy(xpath= "  //*[@id=\"opbox-listing--base\"]/div/section[1]/section/article[1]/div/div/div[2]/div[2]/div/div/span" )
+    @FindBy(xpath= "  //*[@id='opbox-listing--base']/div/section[1]/section/article[1]/div/div/div[2]/div[2]/div/div/span" )
     private List<WebElement> priceMAx;
 
     public List<WebElement> getPriceMAx() {
@@ -108,7 +108,7 @@ public class FastSearchLocators
     public void setSecondArticle(WebElement secondArticle) {
         this.secondArticle = secondArticle;
     }
-    @FindBy(xpath = " //*[@id=\"opbox-listing--base\"]/div/section[1]/section/article[2]/div/div/div[2]/div[2]/div/div/span" )
+    @FindBy(xpath = "//*[@id='opbox-listing--base']/div/section/section/article[2]/div/div/div[2]/div[2]/div/div/span" )
     private List<WebElement> priceSecondArticle;
 
 

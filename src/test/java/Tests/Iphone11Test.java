@@ -41,14 +41,13 @@ public class Iphone11Test
         fastSearchPage.takeFirstArticle();
         fastSearchPage.takePriceMax();
         fastSearchPage.takeSecondArticle();
-        fastSearchPage.takePriceOfSecondArticle();
-
-
-
-
+        fastSearchPage.takePriceOFSecondArticle();
+        System.out.println();
+        System.out.println("Check the prices of both articles. !!!");
 
 
     }
+
 
 
 }

@@ -14,45 +14,46 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.Collection;
 
-public class FastSearchPage
-{
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
+public class FastSearchPage {
 
     WebDriver driver;
     WebDriverWait wait;
     FastSearchLocators fastSearchLocators;
 
-    public  FastSearchPage(WebDriver driver  )
-    {
+    public FastSearchPage(WebDriver driver) {
         this.driver = driver;
         fastSearchLocators = new FastSearchLocators();
         PageFactory.initElements(driver, fastSearchLocators);
-        wait = new WebDriverWait(driver,10);
+        wait = new WebDriverWait(driver, 10);
 
     }
 
-    public void closeAlert()
-    {
+    public void closeAlert() {
         wait.until(ExpectedConditions.elementToBeClickable(fastSearchLocators.getAlert()));
         fastSearchLocators.getAlert().click();
     }
-    public void clickToTopBar ()
-    {
+
+    public void clickToTopBar() {
         fastSearchLocators.getPlaceSearch().click();
 
     }
-    public void placeText(String placeSearch)
-    {
+
+    public void placeText(String placeSearch) {
         fastSearchLocators.getPlaceSearch().sendKeys(placeSearch);
         fastSearchLocators.getPlaceSearch().submit();
 
     }
-    public void  takeColours()
-    {   wait.until(ExpectedConditions.visibilityOf(fastSearchLocators.getSelectColourBlack()));
-         fastSearchLocators.getSelectColourBlack().isSelected();
-         fastSearchLocators.getSelectColourBlack().click();
+
+    public void takeColours() {
+        wait.until(ExpectedConditions.visibilityOf(fastSearchLocators.getSelectColourBlack()));
+        fastSearchLocators.getSelectColourBlack().isSelected();
+        fastSearchLocators.getSelectColourBlack().click();
     }
-    public void  choseListOfPhones()
-    {
+
+    public void choseListOfPhones() {
         wait.until(ExpectedConditions.visibilityOf(fastSearchLocators.getListOfPhones().get(1)));
         fastSearchLocators.getListOfPhones();
         System.out.println(fastSearchLocators.getListOfPhones());
@@ -65,65 +66,72 @@ public class FastSearchPage
         }
         int validation = 60;
         if (fastSearchLocators.getListOfPhones().size() > validation) {
-        System.out.println("Check the list, number of articles is more than " + validation + "!!!!!!!!!!!!!!!!");
-    }
+            System.out.println("Check the list, number of articles is more than " + validation + " !!!!!!!!!!!!!!!!");
+        }
 
     }
-    public void  ReachTopBar()
-    {
-     fastSearchLocators.getTopBar().click();
+
+    public void ReachTopBar() {
+        fastSearchLocators.getTopBar().click();
 
     }
-    public void  selectHighestPrice()
-    {
+
+    public void selectHighestPrice() {
         wait.until(ExpectedConditions.visibilityOf(fastSearchLocators.getHighestPrice()));
         fastSearchLocators.getHighestPrice().isSelected();
         fastSearchLocators.getHighestPrice().click();
     }
-    public void selectPriceMAx()
-    {
+
+    public void selectPriceMAx() {
 
         fastSearchLocators.getPriceMAx();
     }
-    public void takeFirstArticle()
-    {
+
+    public void takeFirstArticle() {
         wait.until(ExpectedConditions.visibilityOf(fastSearchLocators.getFirsArticle()));
         fastSearchLocators.getFirsArticle().isSelected();
         fastSearchLocators.getFirsArticle();
 
     }
-    public void takePriceMax()
-    {
-        for (int i = 0; i < fastSearchLocators.getPriceMAx().size(); i++){
+
+    public void takePriceMax() {
+
+        for (int i = 0; i < fastSearchLocators.getPriceMAx().size(); i++) {
 
             System.out.println("requested Iphone11 " + fastSearchLocators.getPriceMAx().get(i).getText());
-             public String  priceMaxElement = fastSearchLocators.getPriceMAx().get(i).getText().replace(" zł", "").replace(" ","").replace(",",".");
+            String priceMaxElement = fastSearchLocators.getPriceMAx().get(i).getText().replace(" zł", "").replace(" ", "").replace(",", ".");
             Double.parseDouble(priceMaxElement);
-            double PriceVat = Double.parseDouble(priceMaxElement) * 0.23  + Double.parseDouble(priceMaxElement);
-            System.out.println(("Price increased by 23% of vat " + PriceVat +"zł"));
-        fastSearchLocators.getPriceMAx();
+            double PriceVat = Double.parseDouble(priceMaxElement) * 0.23 + Double.parseDouble(priceMaxElement);
+            System.out.println(("Price increased by 23% of vat " + PriceVat + "zł"));
+            fastSearchLocators.getPriceMAx();
         }
 
+
+
+
     }
-    public void takeSecondArticle()
-    {
+
+    public void takeSecondArticle() {
         wait.until(ExpectedConditions.visibilityOf(fastSearchLocators.getSecondArticle()));
+        fastSearchLocators.getSecondArticle().isSelected();
         fastSearchLocators.getSecondArticle();
     }
 
-    public void takePriceOfSecondArticle()
+    public void takePriceOFSecondArticle()
     {
-        for (int i = 0; i < fastSearchLocators.getPriceSecondArticle().size(); i++){
+        for (int i = 0; i < fastSearchLocators.getPriceSecondArticle().size(); i++)
+        {
 
             System.out.println("second article  " + fastSearchLocators.getPriceSecondArticle().get(i).getText());
-            String priceSecondElement = fastSearchLocators.getPriceSecondArticle().get(i).getText().replace(" zł", "").replace(" ","").replace(",",".");
+            String priceSecondElement = fastSearchLocators.getPriceSecondArticle().get(i).getText().replace(" zł", "").replace(" ", "").replace(",", ".");
             Double.parseDouble(priceSecondElement);
-            System.out.println(("Price of second article is "+ priceSecondElement));
+            System.out.println(("Price of second article is " + priceSecondElement));
             fastSearchLocators.getPriceSecondArticle();
 
 
         }
     }
+
 
 
 
