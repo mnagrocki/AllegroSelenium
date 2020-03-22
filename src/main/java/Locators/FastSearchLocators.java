@@ -74,7 +74,7 @@ public class FastSearchLocators
         this.highestPrice = highestPrice;
     }
 
-    @FindBy(xpath = "/html/body/div[2]/div[4]/div/div/div/div/div/div[2]/div[1]/div[3]/div/div/div/div[2]/div[1]/div/section[1]/section/article[1]")
+    @FindBy(css="[data-analytics-view-custom-index0='0'] ._9c44d_1LBF0")
     private WebElement firsArticle;
 
 
@@ -97,6 +97,28 @@ public class FastSearchLocators
         this.priceMAx = (List<WebElement>) priceMAx;
     }
 
+    @FindBy(css="[data-analytics-view-custom-index0='1'] ._9c44d_1LBF0")
+    private WebElement secondArticle;
 
+
+    public WebElement getSecondArticle() {
+        return secondArticle;
+    }
+
+    public void setSecondArticle(WebElement secondArticle) {
+        this.secondArticle = secondArticle;
+    }
+    @FindBy(xpath = " //*[@id=\"opbox-listing--base\"]/div/section[1]/section/article[2]/div/div/div[2]/div[2]/div/div/span" )
+    private List<WebElement> priceSecondArticle;
+
+
+    public List<WebElement> getPriceSecondArticle() {
+        return priceSecondArticle;
+    }
+
+    public void setPriceSecondArticle(List<WebElement> priceSecondArticle) {
+        this.priceSecondArticle = priceSecondArticle;
+    }
 }
+
 
