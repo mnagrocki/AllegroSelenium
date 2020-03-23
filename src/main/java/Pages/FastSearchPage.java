@@ -7,6 +7,7 @@ import net.bytebuddy.build.HashCodeAndEqualsPlugin;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -86,6 +87,11 @@ public class FastSearchPage {
 
         fastSearchLocators.getPriceMAx();
     }
+    public void popapClose ()
+    {
+        wait.until(ExpectedConditions.visibilityOf(fastSearchLocators.getClosePopup()));
+        fastSearchLocators.getClosePopup().click();
+    }
 
     public void takeFirstArticle() {
         wait.until(ExpectedConditions.visibilityOf(fastSearchLocators.getFirsArticle()));
@@ -106,30 +112,6 @@ public class FastSearchPage {
             fastSearchLocators.getPriceMAx();
         }
 
-
-
-
-    }
-
-    public void takeSecondArticle() {
-        wait.until(ExpectedConditions.visibilityOf(fastSearchLocators.getSecondArticle()));
-        fastSearchLocators.getSecondArticle().isSelected();
-        fastSearchLocators.getSecondArticle();
-    }
-
-    public void takePriceOFSecondArticle()
-    {
-        for (int i = 0; i < fastSearchLocators.getPriceSecondArticle().size(); i++)
-        {
-
-            System.out.println("second article  " + fastSearchLocators.getPriceSecondArticle().get(i).getText());
-            String priceSecondElement = fastSearchLocators.getPriceSecondArticle().get(i).getText().replace(" zł", "").replace(" ", "").replace(",", ".");
-            Double.parseDouble(priceSecondElement);
-            System.out.println(("Price of second article is " + priceSecondElement));
-            fastSearchLocators.getPriceSecondArticle();
-
-
-        }
     }
 
 

@@ -20,7 +20,7 @@ public class Iphone11Test
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\mnagr\\Documents\\chromedriver\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.navigate().to( "http://allegro.pl");
-        assertEquals(driver.getTitle(), "Allegro.pl – najlepsze ceny, największy wybór i zawsze bezpieczne zakupy online");
+        assertEquals(driver.getTitle(), "Allegro - Bezpieczne zakupy w niskich cenach");
 
     }
     @Test
@@ -38,12 +38,10 @@ public class Iphone11Test
         fastSearchPage.selectHighestPrice();
         assertTrue( driver.findElement(By.xpath("/html/body/div[2]/div[4]/div/div/div/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/select/option[3]")).isSelected());
         fastSearchPage.selectPriceMAx();
+        fastSearchPage.popapClose();
         fastSearchPage.takeFirstArticle();
         fastSearchPage.takePriceMax();
-        fastSearchPage.takeSecondArticle();
-        fastSearchPage.takePriceOFSecondArticle();
-        System.out.println();
-        System.out.println("Check the prices of both articles. !!! If the price of second article is larger, check the process of sorting list in browser. !  ");
+
 
 
     }
